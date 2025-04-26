@@ -3,15 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search and Cards Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #eeebe8;
+            padding: 5px;
+        }
+     
+        .search-container {
+            max-width: 1080px;
+            margin: 0 auto;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-bar {
+            flex: 1;
+            min-width: 400px;
+            padding: 12px 15px;
+            margin: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-bar:focus {
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .search-button {
+            padding: 8px 15px;
+            background-color: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #ff6347;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            height: 180px;
+            background-color: #ddd;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .card-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: #4a6fa5;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-button:hover {
+            background-color: #3a5a80;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                min-width: 100%;
+            }
+            
+            .search-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-bar, .search-button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="search-container">
-          <input type="text" placeholder="Search by keyword" id="search1">
-          <input type="text" placeholder="Search by location" id="search2">
-          <button class="search-button" id=""searchBtn>Search</button>
-       </div>
+            <input type="text" class="search-bar" id="search1" placeholder="Search by keyword">
+            <input type="text" class="search-bar" id="search2" placeholder="Search by Location">
+            <button class="search-button" id="searchBtn">Search</button>
+        </div>
     </header>
+
+    <main class="content">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Card Title 1</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    <a href="#" class="card-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img height="180px" width="320px" src="https://images.pexels.com/photos/3259629/pexels-photo-3259629.jpeg?auto=compress&cs=tinysrgb&w=600" alt="img1">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Card Title 2</h3>
+                    <p class="card-text">Fusce dapibus tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                    <a href="#" class="card-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Card Title 3</h3>
+                    <p class="card-text">Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue.</p>
+                    <a href="#" class="card-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Card Title 4</h3>
+                    <p class="card-text">Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.</p>
+                    <a href="#" class="card-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search functionality
+            const searchBtn = document.getElementById('searchBtn');
+            const search1 = document.getElementById('search1');
+            const search2 = document.getElementById('search2');
+            
+            searchBtn.addEventListener('click', function() {
+                const keyword = search1.value.trim().toLowerCase();
+                const category = search2.value.trim().toLowerCase();
+                
+                if (keyword || category) {
+                    alert(`Searching for: Keyword: "${keyword}", Category: "${category}"`);
+                    // You can implement actual search functionality here
+                } else {
+                    alert('Please enter search criteria');
+                }
+            });
+            
+            // Add some interactivity to the cards
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach((card, index) => {
+                // Add random background colors to card images for visual distinction
+                const cardImage = card.querySelector('.card-image');
+                const colors = ['#ffad99', '#99ccff', '#b3ff99', '#ffff99', '#cc99ff', '#ff99cc'];
+                cardImage.style.backgroundColor = colors[index % colors.length];
+                
+                // Add click event to cards
+                card.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('card-button')) {
+                        const title = this.querySelector('.card-title').textContent;
+                        console.log(`Card clicked: ${title}`);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
