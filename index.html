@@ -160,17 +160,14 @@
             </div>
     </main>
 
-    <main class="content">
+    <div class="benefit">
         <h3 style="margin-bottom: 10px;">Health Benefit</h1>
-            <div class="card-container">
+            <div class="benefit-container">
         </div>
-    </main>
+    </div>
 
 
     <script>
-
-
-
 
         const cardsData = [
             {
@@ -233,67 +230,6 @@
                     `;
             cardContainer.innerHTML += cardHTML;
         });
-
-
-       
-        const benefitData = [
-            {
-                title: "Benefit 1",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.",
-            },
-            {
-               
-                title: "Benefit 2",
-                text: "Fusce dapibus tellus ac cursus commodo, tortor mauris condimentum nibh.",
-            },
-            {
-                title: "Benefit 3",
-                text: "Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue.",
-            },
-            {
-                title: "Benefit 3",
-                text: "Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.",
-            },
-            {
-                title: "Benefit 4",
-                text: "Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus.",
-            },
-            {
-                title: "Benefit 5",
-                text: "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta.",
-            },
-            {
-                title: "Benefit 6",
-                text: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi.",
-            },
-            {
-                title: "Benefit 7",
-                text: "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo.",
-            }
-        ];
-
-        const cardContainer = document.querySelector('.card-container');
-        cardContainer.innerHTML = ''; // Clear existing cards
-
-        benefitData.forEach(card => {
-            const cardHTML = `
-                        <div class="card">
-                            <div class="card-image">
-                                <img height="180px" width="320px" src="${card.image}" alt="${card.title}">
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title">${card.title}</h3>
-                                <p class="card-text">${card.text}</p>
-                                <a href="#" class="card-button">Learn More</a>
-                            </div>
-                        </div>
-                    `;
-            cardContainer.innerHTML += cardHTML;
-        });
-
-
-
-
 
     </script>
 </body>
