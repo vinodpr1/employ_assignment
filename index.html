@@ -152,50 +152,80 @@
     </header>
 
     <main class="content">
+        <h3 style="margin-bottom: 10px;">Healthcare Careers</h1>
         <div class="card-container">
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Card Title 1</h3>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
-                    <a href="#" class="card-button">Learn More</a>
-                </div>
-            </div>
+            <script>
+                const cardsData = [
+                    {
+                        image: "https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=600",
+                        title: "Card Title 1",
+                        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.",
+                    },
+                    {
+                        image: "https://images.pexels.com/photos/3259629/pexels-photo-3259629.jpeg?auto=compress&cs=tinysrgb&w=600", 
+                        title: "Card Title 2",
+                        text: "Fusce dapibus tellus ac cursus commodo, tortor mauris condimentum nibh.",
+                    },
+                    {
+                        image: "https://images.pexels.com/photos/695953/pexels-photo-695953.jpeg?auto=compress&cs=tinysrgb&w=600",
+                        title: "Card Title 3", 
+                        text: "Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue.",
+                    },
+                    {
+                        image: "https://images.pexels.com/photos/3943909/pexels-photo-3943909.jpeg?auto=compress&cs=tinysrgb&w=600",
+                        title: "Card Title 4",
+                        text: "Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.",
+                    },
+                    {
+                        image: "https://images.pexels.com/photos/3962212/pexels-photo-3962212.jpeg?auto=compress&cs=tinysrgb&w=600",
+                        title: "Card Title 5",
+                        text: "Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus.",
+                    },
+                    {
+                        image: "https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&w=600",
+                        title: "Card Title 6",
+                        text: "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta.",
+                    },
+                    {
+                        image: "https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg?auto=compress&cs=tinysrgb&w=600",
+                        title: "Card Title 7",
+                        text: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi.",
+                    },
+                    {
+                        image: "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600",
+                        title: "Card Title 8",
+                        text: "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo.",
+                    }
+                ];
 
-            <div class="card">
-                <div class="card-image">
-                    <img height="180px" width="320px" src="https://images.pexels.com/photos/3259629/pexels-photo-3259629.jpeg?auto=compress&cs=tinysrgb&w=600" alt="img1">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Card Title 2</h3>
-                    <p class="card-text">Fusce dapibus tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                    <a href="#" class="card-button">Learn More</a>
-                </div>
-            </div>
+                const cardContainer = document.querySelector('.card-container');
+                cardContainer.innerHTML = ''; // Clear existing cards
 
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Card Title 3</h3>
-                    <p class="card-text">Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue.</p>
-                    <a href="#" class="card-button">Learn More</a>
-                </div>
-            </div>
+                cardsData.forEach(card => {
+                    const cardHTML = `
+                        <div class="card">
+                            <div class="card-image">
+                                <img height="180px" width="320px" src="${card.image}" alt="${card.title}">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">${card.title}</h3>
+                                <p class="card-text">${card.text}</p>
+                                <a href="#" class="card-button">Learn More</a>
+                            </div>
+                        </div>
+                    `;
+                    cardContainer.innerHTML += cardHTML;
+                });
+            </script>
 
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Card Title 4</h3>
-                    <p class="card-text">Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.</p>
-                    <a href="#" class="card-button">Learn More</a>
-                </div>
-            </div>
+            
+
+            
         </div>
     </main>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Search functionality
             const searchBtn = document.getElementById('searchBtn');
             const search1 = document.getElementById('search1');
             const search2 = document.getElementById('search2');
@@ -205,23 +235,19 @@
                 const category = search2.value.trim().toLowerCase();
                 
                 if (keyword || category) {
-                    alert(`Searching for: Keyword: "${keyword}", Category: "${category}"`);
-                    // You can implement actual search functionality here
+                    alert(`Searching for: Keyword: "${keyword}", Category: "${category}"`)
                 } else {
                     alert('Please enter search criteria');
                 }
             });
             
-            // Add some interactivity to the cards
             const cards = document.querySelectorAll('.card');
             
             cards.forEach((card, index) => {
-                // Add random background colors to card images for visual distinction
                 const cardImage = card.querySelector('.card-image');
                 const colors = ['#ffad99', '#99ccff', '#b3ff99', '#ffff99', '#cc99ff', '#ff99cc'];
                 cardImage.style.backgroundColor = colors[index % colors.length];
                 
-                // Add click event to cards
                 card.addEventListener('click', function(e) {
                     if (!e.target.classList.contains('card-button')) {
                         const title = this.querySelector('.card-title').textContent;
