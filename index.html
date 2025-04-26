@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,7 @@
             background-color: #eeebe8;
             padding: 5px;
         }
-     
+
         .search-container {
             max-width: 1080px;
             margin: 0 auto;
@@ -130,18 +131,20 @@
             .card {
                 min-width: 100%;
             }
-            
+
             .search-container {
                 flex-direction: column;
                 align-items: stretch;
             }
-            
-            .search-bar, .search-button {
+
+            .search-bar,
+            .search-button {
                 width: 100%;
             }
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <div class="search-container">
@@ -153,56 +156,64 @@
 
     <main class="content">
         <h3 style="margin-bottom: 10px;">Healthcare Careers</h1>
-        <div class="card-container">
-            <script>
-                const cardsData = [
-                    {
-                        image: "https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        title: "Card Title 1",
-                        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.",
-                    },
-                    {
-                        image: "https://images.pexels.com/photos/3259629/pexels-photo-3259629.jpeg?auto=compress&cs=tinysrgb&w=600", 
-                        title: "Card Title 2",
-                        text: "Fusce dapibus tellus ac cursus commodo, tortor mauris condimentum nibh.",
-                    },
-                    {
-                        image: "https://images.pexels.com/photos/695953/pexels-photo-695953.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        title: "Card Title 3", 
-                        text: "Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue.",
-                    },
-                    {
-                        image: "https://images.pexels.com/photos/3943909/pexels-photo-3943909.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        title: "Card Title 4",
-                        text: "Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.",
-                    },
-                    {
-                        image: "https://images.pexels.com/photos/3962212/pexels-photo-3962212.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        title: "Card Title 5",
-                        text: "Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus.",
-                    },
-                    {
-                        image: "https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        title: "Card Title 6",
-                        text: "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta.",
-                    },
-                    {
-                        image: "https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        title: "Card Title 7",
-                        text: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi.",
-                    },
-                    {
-                        image: "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        title: "Card Title 8",
-                        text: "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo.",
-                    }
-                ];
+            <div class="card-container">
 
-                const cardContainer = document.querySelector('.card-container');
-                cardContainer.innerHTML = ''; // Clear existing cards
+            </div>
+    </main>
 
-                cardsData.forEach(card => {
-                    const cardHTML = `
+    <script>
+
+
+
+
+        const cardsData = [
+            {
+                image: "https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=600",
+                title: "Card Title 1",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.",
+            },
+            {
+                image: "https://images.pexels.com/photos/3259629/pexels-photo-3259629.jpeg?auto=compress&cs=tinysrgb&w=600",
+                title: "Card Title 2",
+                text: "Fusce dapibus tellus ac cursus commodo, tortor mauris condimentum nibh.",
+            },
+            {
+                image: "https://images.pexels.com/photos/695953/pexels-photo-695953.jpeg?auto=compress&cs=tinysrgb&w=600",
+                title: "Card Title 3",
+                text: "Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue.",
+            },
+            {
+                image: "https://images.pexels.com/photos/3943909/pexels-photo-3943909.jpeg?auto=compress&cs=tinysrgb&w=600",
+                title: "Card Title 4",
+                text: "Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.",
+            },
+            {
+                image: "https://images.pexels.com/photos/3962212/pexels-photo-3962212.jpeg?auto=compress&cs=tinysrgb&w=600",
+                title: "Card Title 5",
+                text: "Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus.",
+            },
+            {
+                image: "https://images.pexels.com/photos/3846038/pexels-photo-3846038.jpeg?auto=compress&cs=tinysrgb&w=600",
+                title: "Card Title 6",
+                text: "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta.",
+            },
+            {
+                image: "https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg?auto=compress&cs=tinysrgb&w=600",
+                title: "Card Title 7",
+                text: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi.",
+            },
+            {
+                image: "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600",
+                title: "Card Title 8",
+                text: "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo.",
+            }
+        ];
+
+        const cardContainer = document.querySelector('.card-container');
+        cardContainer.innerHTML = ''; // Clear existing cards
+
+        cardsData.forEach(card => {
+            const cardHTML = `
                         <div class="card">
                             <div class="card-image">
                                 <img height="180px" width="320px" src="${card.image}" alt="${card.title}">
@@ -214,48 +225,14 @@
                             </div>
                         </div>
                     `;
-                    cardContainer.innerHTML += cardHTML;
-                });
-            </script>
-
-            
-
-            
-        </div>
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchBtn = document.getElementById('searchBtn');
-            const search1 = document.getElementById('search1');
-            const search2 = document.getElementById('search2');
-            
-            searchBtn.addEventListener('click', function() {
-                const keyword = search1.value.trim().toLowerCase();
-                const category = search2.value.trim().toLowerCase();
-                
-                if (keyword || category) {
-                    alert(`Searching for: Keyword: "${keyword}", Category: "${category}"`)
-                } else {
-                    alert('Please enter search criteria');
-                }
-            });
-            
-            const cards = document.querySelectorAll('.card');
-            
-            cards.forEach((card, index) => {
-                const cardImage = card.querySelector('.card-image');
-                const colors = ['#ffad99', '#99ccff', '#b3ff99', '#ffff99', '#cc99ff', '#ff99cc'];
-                cardImage.style.backgroundColor = colors[index % colors.length];
-                
-                card.addEventListener('click', function(e) {
-                    if (!e.target.classList.contains('card-button')) {
-                        const title = this.querySelector('.card-title').textContent;
-                        console.log(`Card clicked: ${title}`);
-                    }
-                });
-            });
+            cardContainer.innerHTML += cardHTML;
         });
+
+
+
+
+
     </script>
 </body>
+
 </html>
